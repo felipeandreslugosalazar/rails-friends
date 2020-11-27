@@ -1,0 +1,17 @@
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @friend.first_name.capitalize %>
+    <%= @friend.last_name.capitalize %>
+  </h1>
+  <p class="lead">
+    <%= @friend.email %> |
+    <%= @friend.phone %> | 
+    <%= @friend.extra %>
+  </p>
+  <br>
+
+  <p class="lead">
+    <%= link_to "Edit", edit_friend_path(@friend), class: "btn btn-secondary" %>
+  </p>
+</div>
+<%= link_to "List", friends_path %>

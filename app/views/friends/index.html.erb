@@ -1,0 +1,33 @@
+
+<table class="table table-striped table-bordered table-hover ">
+  <thead class="thead-dark ">
+    <tr class="text-center rounded">
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Extra Infomation</th>
+      <th colspan="3">Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @friends.each do |friend| %>
+      <tr class="text-center">
+        <td><%= link_to "#{friend.first_name.capitalize}", friend %></td>
+        <td><%= friend.last_name.capitalize %></td>
+        <td><%= friend.email %></td>
+        <td><%= friend.phone %></td>
+        <td><%= friend.extra.capitalize %></td>
+        <%# <td><%= link_to "Show", friend %></td>
+        <td><%= link_to icon("fas", "eye"), friend_path(friend) %></td>
+        <%# <td><%= link_to "Edit", edit_friend_path(friend) %></td>
+        <td><%= link_to icon("fas", "pencil-alt"), edit_friend_path(friend) %></td>
+        <%# <td><%= link_to "Destroy", friend, method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <td><%= link_to icon("fas", "trash"), friend, method: :delete, data: { confirm: "Are you sure?" }, class: "icon-red" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
